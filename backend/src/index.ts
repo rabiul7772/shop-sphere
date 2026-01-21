@@ -11,7 +11,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-  res.json({ status: 'success', message: 'welcome to shop sphere!' });
+  res.json({
+    message:
+      'welcome to shop sphere build with postgresql, expressjs, typescript & clerk!',
+    endpoints: {
+      users: '/api/users',
+      products: '/api/products',
+      comments: '/api/comments'
+    }
+  });
 });
 
 app.listen(PORT, () => {

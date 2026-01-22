@@ -90,22 +90,28 @@ export const getProductsByUserId = async (userId: string) => {
 };
 
 export const updateProduct = async (id: string, data: Partial<NewProduct>) => {
-  const [product] = await db
+  const product = await getProductById(id);
+  if (!product) throw new Error('Product not found');
+
+  const [updatedProduct] = await db
     .update(products)
     .set(data)
     .where(eq(products.id, id))
     .returning();
 
-  return product;
+  return updatedProduct;
 };
 
 export const deleteProduct = async (id: string) => {
-  const [product] = await db
+  const product = await getProductById(id);
+  if (!product) throw new Error('Product not found');
+
+  const [deletedProduct] = await db
     .delete(products)
     .where(eq(products.id, id))
     .returning();
 
-  return product;
+  return deletedProduct;
 };
 
 // COMMENT QUERIES
@@ -127,12 +133,15 @@ export const updateComment = async (id: string, data: Partial<NewComment>) => {
 };
 
 export const deleteComment = async (id: string) => {
-  const [comment] = await db
+  const comment = await getCommentById(id);
+  if (!comment) throw new Error('Comment not found');
+
+  const [deletedComment] = await db
     .delete(comments)
     .where(eq(comments.id, id))
     .returning();
 
-  return comment;
+  return deletedComment;
 };
 
 export const getCommentById = async (id: string) => {

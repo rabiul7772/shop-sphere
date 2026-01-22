@@ -48,7 +48,7 @@ export const updateComment = async (req: Request, res: Response) => {
 
     if (userId !== comment.userId)
       return res
-        .status(401)
+        .status(403)
         .json({ error: 'You are not authorized to update this comment' });
 
     const { content, productId } = req.body;
@@ -86,7 +86,7 @@ export const deleteComment = async (req: Request, res: Response) => {
 
     if (userId !== comment.userId)
       return res
-        .status(401)
+        .status(403)
         .json({ error: 'You are not authorized to delete this comment' });
 
     await queries.deleteComment(commentId);

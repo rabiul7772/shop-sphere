@@ -11,7 +11,7 @@ import { requireAuth } from '@clerk/express';
 
 const productRouter = Router();
 
-// /api/v1/products > gell all the products [PUBLIC]
+// /api/v1/products > get all the products [PUBLIC]
 
 productRouter.get('/', getAllProducts);
 productRouter.get('/my', requireAuth(), getMyProducts);

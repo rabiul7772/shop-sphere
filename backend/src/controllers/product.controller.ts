@@ -48,7 +48,7 @@ export const getProductById = async (req: Request, res: Response) => {
     }
 
     const product = await queries.getProductById(id);
-    if (!product) res.status(404).json({ error: 'Product not found' });
+    if (!product) return res.status(404).json({ error: 'Product not found' });
 
     res.status(200).json(product);
   } catch (error) {
@@ -104,7 +104,7 @@ export const updateProduct = async (req: Request, res: Response) => {
 
     if (userId !== product.userId)
       return res
-        .status(401)
+        .status(403)
         .json({ error: 'You are not authorized to update this product' });
 
     const { title, description, imageUrl } = req.body;

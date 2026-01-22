@@ -29,6 +29,6 @@ export const syncUser = async (req: Request, res: Response) => {
     console.error('Error syncing user', error);
     res
       .status(500)
-      .json({ error: 'Internal server error, failed to sycn user' });
+      .json({ error: 'Internal server error, failed to sync user' });
   }
 };

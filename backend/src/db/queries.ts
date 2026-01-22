@@ -19,13 +19,17 @@ export const createUser = async (data: NewUser) => {
 };
 
 export const updateUser = async (id: string, data: Partial<NewUser>) => {
-  const [user] = await db
+  // check if user exists
+  const user = await getUserById(id);
+  if (!user) throw new Error('User not found');
+
+  const [updatedUser] = await db
     .update(users)
     .set(data)
     .where(eq(users.id, id))
     .returning();
 
-  return user;
+  return updatedUser;
 };
 
 export const getUserById = async (id: string) => {
@@ -35,11 +39,16 @@ export const getUserById = async (id: string) => {
 };
 
 export const upsertUser = async (data: NewUser) => {
-  const existingUser = await getUserById(data.id);
+  const [user] = await db
+    .insert(users)
+    .values(data)
+    .onConflictDoUpdate({
+      target: users.id,
+      set: data
+    })
+    .returning();
 
-  if (existingUser) return await updateUser(data.id, data);
-
-  return await createUser(data);
+  return user;
 };
 
 // PRODUCT QUERIES

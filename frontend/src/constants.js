@@ -108,3 +108,39 @@ export const THEMES = [
     colors: ['#FF865B', '#FD6F9C', '#B387FA', '#121c22']
   }
 ];
+
+export const PRODUCTS = [
+  {
+    id: 1,
+    title: 'Dreamy Clouds',
+    price: 120,
+    imageUrl:
+      'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=2000',
+    description: 'A beautiful painting of dreamy clouds in the sky.',
+    ownerName: 'Sarah Art',
+    ownerImageUrl:
+      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200'
+  },
+  {
+    id: 2,
+    title: 'Retro Camera',
+    price: 450,
+    imageUrl:
+      'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=1000',
+    description: 'A classic retro camera for photography enthusiasts.',
+    ownerName: 'Camera Guy',
+    ownerImageUrl:
+      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200'
+  },
+  {
+    id: 3,
+    title: 'Modern Headphones',
+    price: 299,
+    imageUrl:
+      'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=1000',
+    description: 'Experience high-quality sound with these modern headphones.',
+    ownerName: 'Audio Tech',
+    ownerImageUrl:
+      'https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&q=80&w=200'
+  }
+];

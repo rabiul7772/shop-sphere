@@ -72,8 +72,7 @@ const Home = () => {
               Share Your <span className="text-primary">Products</span>
             </h1>
             <p className="py-2 text-xl text-base-content/80 max-w-lg mx-auto lg:mx-0">
-              Upload, discover, and connect with creators. Join our marketplace
-              today.
+              Showcase products. Discover ideas. Connect with creators.
             </p>
 
             <div className="flex justify-center lg:justify-start">

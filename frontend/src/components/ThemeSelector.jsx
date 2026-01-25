@@ -18,7 +18,7 @@ const ThemeSelector = () => {
   // but for SSR safety or general best practice, this is fine in client-side React.
 
   return (
-    <div className="dropdown dropdown-end">
+    <div className="dropdown  mx-auto">
       {/* Trigger Button */}
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
         <Palette className="size-5" />

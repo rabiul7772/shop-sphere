@@ -52,7 +52,7 @@ const ProductCard = ({ product, isOwner, onDelete }) => {
                 </Link>
                 <button
                   className="btn btn-sm btn-error btn-outline btn-square"
-                  onClick={() => onDelete(product.id)}
+                  onClick={() => onDelete?.(product.id)}
                 >
                   <Trash2 className="size-4" />
                 </button>

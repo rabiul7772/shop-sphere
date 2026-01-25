@@ -15,14 +15,14 @@ const ProductHeader = ({ onEdit, onDelete, isOwner = true }) => {
       {isOwner && (
         <div className="flex items-center gap-2">
           <button
-            onClick={onEdit}
+            onClick={() => onEdit?.()}
             className="btn btn-ghost hover:bg-base-300 gap-2"
           >
             <Edit className="size-4" />
             Edit
           </button>
           <button
-            onClick={onDelete}
+            onClick={() => onDelete?.()}
             className="btn btn-error btn-sm md:btn-md gap-2 text-white"
           >
             <Trash2 className="size-4" />

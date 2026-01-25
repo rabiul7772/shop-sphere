@@ -9,7 +9,7 @@ import {
 import { Link } from 'react-router';
 import { ShoppingBagIcon, LogIn, UserPlus, Plus, User } from 'lucide-react';
 
-import ThemeSelector from '../features/ThemeSelector';
+import ThemeSelector from './ThemeSelector';
 
 const Navbar = () => {
   const { isSignedIn } = useAuth();
@@ -49,11 +49,9 @@ const Navbar = () => {
           </SignedOut>
 
           <SignedIn>
-            <Link to="/product/create">
-              <button className="btn btn-primary btn-sm gap-2">
-                <Plus className="size-4" />
-                <span className="hidden sm:inline">New Product</span>
-              </button>
+            <Link to="/product/create" className="btn btn-primary btn-sm gap-2">
+              <Plus className="size-4" />
+              <span className="hidden sm:inline">New Product</span>
             </Link>
             <Link
               to="/profile"

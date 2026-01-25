@@ -55,6 +55,19 @@ const ProductForm = ({
             required
           />
 
+          <FormInput
+            label="Price"
+            icon={DollarSign}
+            type="number"
+            name="price"
+            min="0"
+            step="0.01"
+            placeholder="0.00"
+            value={formData.price}
+            onChange={handleChange}
+            required
+          />
+
           {/* Image URL */}
           <FormInput
             label="Image URL"
@@ -104,6 +117,7 @@ const ProductForm = ({
             <button
               type="submit"
               className={`btn btn-primary w-full gap-2 ${isLoading ? 'btn-disabled' : ''}`}
+              disabled={isLoading}
             >
               {isLoading ? (
                 <Loader2 className="size-5 animate-spin" />

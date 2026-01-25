@@ -53,7 +53,7 @@ export const updateComment = async (req: Request, res: Response) => {
 
     const { content, productId } = req.body;
 
-    if (!content || !productId)
+    if (!content)
       return res.status(400).json({ error: 'Missing required fields' });
 
     const updatedComment = await queries.updateComment(commentId, {
